@@ -1,103 +1,143 @@
-/* ===== GLOBAL RESET ===== */
+/* =========================
+   SAPIENTIA DESIGN SYSTEM
+   ========================= */
 
+/* FONT (modern consulting feel) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  }
-
-/* ===== BODY ===== */
-body {
-background: #0b1220;
-color: #e6eaf0;
-line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-/* ===== HEADER ===== */
+/* ROOT COLOR SYSTEM */
+:root {
+    --bg: #0B1220;
+    --surface: #111C2E;
+    --primary: #617891;
+    --accent: #D5B893;
+    --muted: #9AA8B6;
+    --danger: #632024;
+}
+
+/* BODY */
+body {
+    background: var(--bg);
+    color: white;
+    line-height: 1.6;
+}
+
+/* LINKS */
+a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* HEADER */
 .header {
-padding: 20px 40px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: #0f1a2b;
-border-bottom: 1px solid #1f2a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--surface);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .header h1 {
-font-size: 20px;
-color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
 }
 
 .header p {
-font-size: 12px;
-color: #9fb3c8;
+    font-size: 12px;
+    color: var(--muted);
 }
 
-/* NAV */
 nav a {
-margin: 0 10px;
-color: #9fb3c8;
-text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
 }
 
-nav a:hover {
-color: #ffffff;
-}
-
-/* ===== HERO ===== */
+/* HERO */
 .hero {
-padding: 100px 40px;
-text-align: center;
+    padding: 120px 40px;
+    text-align: center;
 }
 
 .hero h2 {
-font-size: 42px;
-margin-bottom: 20px;
-color: #ffffff;
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .hero p {
-max-width: 700px;
-margin: auto;
-color: #b6c2d1;
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 16px;
 }
 
-.hero button {
-margin-top: 20px;
-padding: 12px 24px;
-border: none;
-background: #3b82f6;
-color: white;
-cursor: pointer;
-border-radius: 6px;
+/* BUTTON */
+button {
+    margin-top: 25px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #1a1a1a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-/* ===== SECTIONS ===== */
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
 section {
-padding: 60px 40px;
+    padding: 70px 40px;
 }
 
 section h2 {
-font-size: 28px;
-margin-bottom: 20px;
-color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: white;
 }
 
-/* SERVICE BOXES */
+/* CARDS */
 section div {
-background: #111c2e;
-padding: 20px;
-margin: 10px 0;
-border-radius: 8px;
-border: 1px solid #1f2a3a;
+    background: var(--surface);
+    padding: 20px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s ease;
 }
 
-/* ===== FOOTER ===== */
+section div:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+/* TEXT */
+p {
+    color: var(--muted);
+}
+
+/* FOOTER */
 footer {
-text-align: center;
-padding: 30px;
-background: #0f1a2b;
-border-top: 1px solid #1f2a3a;
-color: #9fb3c8;
+    text-align: center;
+    padding: 30px;
+    background: var(--surface);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--muted);
 }
