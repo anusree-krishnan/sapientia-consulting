@@ -1,8 +1,8 @@
 /* =========================
-   SAPIENTIA DESIGN SYSTEM
+   SAPIENTIA LIGHT ENTERPRISE SYSTEM
    ========================= */
 
-/* FONT (modern consulting feel) */
+/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* RESET */
@@ -13,20 +13,22 @@
     font-family: "Inter", sans-serif;
 }
 
-/* ROOT COLOR SYSTEM */
+/* DESIGN TOKENS */
 :root {
-    --bg: #0F172A;        /* softer slate navy (less harsh) */
-    --surface: #1A2435;   /* lighter card background */
-    --primary: #617891;
-    --accent: #D5B893;
-    --muted: #A7B4C3;     /* slightly brighter text */
-    --danger: #632024;
+    --bg: #F7F9FC;          /* soft enterprise background */
+    --surface: #FFFFFF;     /* clean cards */
+    --primary: #2563EB;     /* trust blue */
+    --accent: #F59E0B;      /* warm gold highlight */
+    --text: #0F172A;        /* strong readable text */
+    --muted: #64748B;       /* soft gray */
+    --border: #E5E7EB;
+    --danger: #B91C1C;
 }
 
 /* BODY */
 body {
     background: var(--bg);
-    color: white;
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -34,10 +36,11 @@ body {
 a {
     color: var(--muted);
     text-decoration: none;
+    transition: 0.2s ease;
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 /* HEADER */
@@ -47,13 +50,13 @@ a:hover {
     align-items: center;
     padding: 20px 40px;
     background: var(--surface);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--border);
 }
 
 .header h1 {
     font-size: 20px;
     font-weight: 600;
-    color: white;
+    color: var(--text);
 }
 
 .header p {
@@ -73,16 +76,17 @@ nav a {
 }
 
 .hero h2 {
-    font-size: 44px;
+    font-size: 48px;
     font-weight: 600;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .hero p {
     max-width: 700px;
     margin: auto;
     color: var(--muted);
-    font-size: 16px;
+    font-size: 17px;
 }
 
 /* BUTTON */
@@ -90,42 +94,43 @@ button {
     margin-top: 25px;
     padding: 12px 26px;
     border: none;
-    border-radius: 6px;
-    background: var(--accent);
-    color: #1a1a1a;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
 button:hover {
+    background: #1d4ed8;
     transform: translateY(-2px);
 }
 
 /* SECTIONS */
 section {
-    padding: 70px 40px;
+    padding: 80px 40px;
 }
 
 section h2 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 25px;
-    color: white;
+    color: var(--text);
 }
 
 /* CARDS */
 section div {
     background: var(--surface);
-    padding: 20px;
-    margin: 12px 0;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s ease;
+    padding: 22px;
+    margin: 14px 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.2s ease;
 }
 
 section div:hover {
     transform: translateY(-3px);
-    border-color: var(--accent);
+    border-color: var(--primary);
 }
 
 /* TEXT */
@@ -138,6 +143,6 @@ footer {
     text-align: center;
     padding: 30px;
     background: var(--surface);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid var(--border);
     color: var(--muted);
 }
