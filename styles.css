@@ -1,46 +1,53 @@
 /* =========================
-   SAPIENTIA LIGHT ENTERPRISE SYSTEM
+   SAPIENTIA — CLASSICAL MODERN CONSULTING THEME
+   (Greco-Roman inspired, parchment + teal + gold + purple)
    ========================= */
 
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap');
 
 /* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
 }
 
 /* DESIGN TOKENS */
 :root {
-    --bg: #F7F9FC;          /* soft enterprise background */
-    --surface: #FFFFFF;     /* clean cards */
-    --primary: #2563EB;     /* trust blue */
-    --accent: #F59E0B;      /* warm gold highlight */
-    --text: #0F172A;        /* strong readable text */
-    --muted: #64748B;       /* soft gray */
-    --border: #E5E7EB;
-    --danger: #B91C1C;
+    /* parchment base */
+    --bg: #F4EBDD;           /* aged parchment */
+    --surface: #FFFFFF;      /* clean paper cards */
+    --ink: #1C1A18;          /* deep ink text */
+
+    /* accent system */
+    --teal: #2A9D8F;         /* wisdom / intelligence */
+    --deep-teal: #1F6F6A;
+    --gold: #C9A227;         /* prestige / highlight */
+    --purple: #6D4C8B;       /* intellect / mystery */
+
+    /* neutrals */
+    --muted: #6B625A;
+    --border: rgba(28,26,24,0.12);
 }
 
 /* BODY */
 body {
-    background: var(--bg);
-    color: var(--text);
+    background: radial-gradient(circle at top, #F7F0E3, var(--bg));
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
     line-height: 1.6;
 }
 
 /* LINKS */
 a {
-    color: var(--muted);
+    color: var(--teal);
     text-decoration: none;
     transition: 0.2s ease;
 }
 
 a:hover {
-    color: var(--primary);
+    color: var(--purple);
 }
 
 /* HEADER */
@@ -48,15 +55,17 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: var(--surface);
+    padding: 22px 40px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
 }
 
 .header h1 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text);
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--ink);
 }
 
 .header p {
@@ -67,6 +76,13 @@ a:hover {
 nav a {
     margin: 0 12px;
     font-size: 14px;
+    color: var(--ink);
+    opacity: 0.75;
+}
+
+nav a:hover {
+    color: var(--teal);
+    opacity: 1;
 }
 
 /* HERO */
@@ -76,35 +92,43 @@ nav a {
 }
 
 .hero h2 {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 600;
-    margin-bottom: 20px;
+    font-family: "Cinzel", serif;
     letter-spacing: -0.5px;
+
+    /* gradient ink + teal hint */
+    background: linear-gradient(90deg, var(--ink), var(--teal), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    max-width: 700px;
-    margin: auto;
-    color: var(--muted);
+    max-width: 720px;
+    margin: 20px auto;
     font-size: 17px;
+    color: var(--muted);
 }
 
 /* BUTTON */
 button {
     margin-top: 25px;
-    padding: 12px 26px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 8px;
-    background: var(--primary);
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, var(--teal), var(--purple));
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+
+    transition: 0.25s ease;
+    box-shadow: 0 10px 25px rgba(42,157,143,0.25);
 }
 
 button:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(109,76,139,0.25);
 }
 
 /* SECTIONS */
@@ -113,24 +137,40 @@ section {
 }
 
 section h2 {
+    font-family: "Cinzel", serif;
     font-size: 30px;
     margin-bottom: 25px;
-    color: var(--text);
+    color: var(--ink);
 }
 
 /* CARDS */
 section div {
-    background: var(--surface);
+    background: rgba(255,255,255,0.85);
     padding: 22px;
     margin: 14px 0;
-    border-radius: 12px;
+    border-radius: 14px;
     border: 1px solid var(--border);
-    transition: 0.2s ease;
+
+    transition: 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle “roman marble glow” accent line */
+section div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--teal), var(--purple));
+    opacity: 0.7;
 }
 
 section div:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary);
+    transform: translateY(-4px);
+    border-color: var(--teal);
 }
 
 /* TEXT */
@@ -141,8 +181,9 @@ p {
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 30px;
-    background: var(--surface);
+    padding: 35px;
+    background: rgba(255,255,255,0.7);
     border-top: 1px solid var(--border);
     color: var(--muted);
+    font-size: 14px;
 }
