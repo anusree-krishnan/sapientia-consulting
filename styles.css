@@ -15,11 +15,11 @@
 
 /* ROOT COLOR SYSTEM */
 :root {
-    --bg: #0B1220;
-    --surface: #111C2E;
+    --bg: #0F172A;        /* softer slate navy (less harsh) */
+    --surface: #1A2435;   /* lighter card background */
     --primary: #617891;
     --accent: #D5B893;
-    --muted: #9AA8B6;
+    --muted: #A7B4C3;     /* slightly brighter text */
     --danger: #632024;
 }
 
